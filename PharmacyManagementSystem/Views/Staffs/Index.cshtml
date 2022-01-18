@@ -1,0 +1,86 @@
+﻿@model IEnumerable<PharmacyManagementSystem.Models.Staff>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Staff</h2>
+
+<div class="btn btn-outline-dark">
+    @Html.ActionLink("Create New", "Create")
+</div>
+
+<br>
+<hr />
+<table class="table table-bordered table-condensed table-striped table-hover sortable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role.name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="table-dark">
+            <td>
+                @Html.DisplayFor(modelItem => item.firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role.name)
+            </td>
+            <td>
+                <div class="btn btn-success">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.staf_id }, new { style = "color: Black" })
+                </div>
+                <div class="btn btn-primary">
+                    @Html.ActionLink("Details", "Details", new { id = item.staf_id }, new { style = "color: Black" })
+                </div>
+
+                <div class="btn btn-danger">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.staf_id }, new { style = "color: Black" })
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>

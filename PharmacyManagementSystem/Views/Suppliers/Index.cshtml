@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PharmacyManagementSystem.Models.Supplier>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Supplier</h2>
+
+<div class="btn btn-outline-dark">
+    @Html.ActionLink("Create New", "Create")
+</div>
+
+<br>
+<hr />
+<table class="table table-bordered table-condensed table-striped table-hover sortable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="table-dark">
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                <div class="btn btn-success">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.sup_id }, new { style = "color: Black" })
+                </div>
+                <div class="btn btn-primary">
+                    @Html.ActionLink("Details", "Details", new { id = item.sup_id }, new { style = "color: Black" })
+                </div>
+
+                <div class="btn btn-danger">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.sup_id }, new { style = "color: Black" })
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>

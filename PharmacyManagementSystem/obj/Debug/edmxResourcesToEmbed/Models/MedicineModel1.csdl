@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PharmacyDatabaseModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Medicine">
+    <Key>
+      <PropertyRef Name="med_id" />
+    </Key>
+    <Property Name="med_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="med_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="med_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="med_unit_price" Type="Double" Nullable="false" />
+    <Property Name="med_quantity" Type="Int32" Nullable="false" />
+    <Property Name="med_total" Type="Double" Nullable="false" />
+    <Property Name="cat_id" Type="Int32" Nullable="false" />
+    <Property Name="sup_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PharmacyDatabaseEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Medicines" EntityType="Self.Medicine" />
+  </EntityContainer>
+</Schema>

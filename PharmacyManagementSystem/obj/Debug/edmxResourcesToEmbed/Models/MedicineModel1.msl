@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PharmacyDatabaseModel2StoreContainer" CdmEntityContainer="PharmacyDatabaseEntities5">
+    <EntitySetMapping Name="Medicines">
+      <EntityTypeMapping TypeName="PharmacyDatabaseModel2.Medicine">
+        <MappingFragment StoreEntitySet="Medicine">
+          <ScalarProperty Name="med_id" ColumnName="med_id" />
+          <ScalarProperty Name="med_name" ColumnName="med_name" />
+          <ScalarProperty Name="med_type" ColumnName="med_type" />
+          <ScalarProperty Name="med_unit_price" ColumnName="med_unit_price" />
+          <ScalarProperty Name="med_quantity" ColumnName="med_quantity" />
+          <ScalarProperty Name="med_total" ColumnName="med_total" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="sup_id" ColumnName="sup_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,54 @@
+﻿@model PharmacyManagementSystem.Models.Purchasing
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Purchasing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Medicine.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medicine.name)
+        </dd>
+
+    </dl>
+</div>
+<br>
+<div class="btn btn-success">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.pur_id }, new { style = "color: Black" })
+</div>
+
+<div class="btn btn-outline-dark">
+    @Html.ActionLink("Back to List", "Index")
+</div>

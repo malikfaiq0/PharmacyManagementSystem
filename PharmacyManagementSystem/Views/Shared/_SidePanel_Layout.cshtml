@@ -1,0 +1,97 @@
+﻿
+@Html.Raw(TempData["LoginSuccessMessage"])
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>DG PHARMA</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/Content/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom ">DG PHARMA</div>
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" @Html.ActionLink("About", "About", "Home")</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" @Html.ActionLink("Customer", "Index", "Customers")</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" @Html.ActionLink("Role", "Index", "Roles")</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" @Html.ActionLink("Staff", "Index", "Staffs")</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" @Html.ActionLink("Medicine", "Index", "Medicines")</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" @Html.ActionLink("Categorie", "Index", "Categories")</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" @Html.ActionLink("Order", "Index", "Orders")</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" @Html.ActionLink("Supplier", "Index", "Suppliers")</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" @Html.ActionLink("Purchasing", "Index", "Purchasings")</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" @Html.ActionLink("Report", "Index", "Reports")</a>
+
+
+                
+            </div>
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper ">
+            <!-- Top navigation-->
+            <nav class="navbar navbar-expand-lg navbar-expand-md border-bottom navbar-dark bg-dark navbar-fixed-top">
+                <div class="container-fluid">
+                    <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" style="color:white">
+                            @if (Session["UserId"] != null)
+                            {
+                                <h4 style="color:blue"> Hello @Session["UserName"]</h4>
+                                @Html.ActionLink("Logout", "Logout", "Login")
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Login", "Index", "Login")
+                            }
+
+
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page content-->
+            <div class="container-fluid">
+                <h1 class="mt-4">Pharmacy Management System</h1>
+                <p>This software stores detail of medicine purchase stock and sell stock.
+                We can maintain purchase stock detail by company wise sell stock detail by customer wise. 
+                This software automated generate reports for stock, 
+                sell, and customer detail.</p>
+                <p>
+                 @RenderBody()
+                 @RenderSection("scripts", required: false)
+                </p>
+                 
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/Content/js/scripts.js"></script>
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - All Rights Reserved | PharmacyManagementSystem</p>
+        </footer>
+    </div>
+</body>
+</html>
+
